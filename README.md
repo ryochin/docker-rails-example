@@ -91,6 +91,12 @@ Besides the Rails app itself, a number of new Docker related files were added
 to the project which would be any file having `*docker*` in its name. Also
 GitHub Actions have been set up.
 
+Main changes vs the original repository
+---------------------------------------
+
+* **Core:**
+  * Apply rails app:update & db:migrate
+
 ## Running this app
 
 You'll need to have [Docker installed](https://docs.docker.com/get-docker/).
