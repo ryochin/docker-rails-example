@@ -16,7 +16,12 @@ tmp/*
 .env*
 !.env.example
 config/master.key
-docker-compose.override.yml
+compose.override.yml
 yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+
+.bash_history
+.irb_history
+.pry_history
+.psql_history

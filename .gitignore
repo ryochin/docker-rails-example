@@ -27,4 +27,10 @@ yarn-debug.log*
 # Ignore secrets and other files.
 .env*
 !.env.example
-docker-compose.override.yml
+compose.override.yml
+
+# Ignore shell history files.
+.bash_history
+.irb_history
+.pry_history
+.psql_history

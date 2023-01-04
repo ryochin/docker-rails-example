@@ -97,6 +97,12 @@ Main changes vs the original repository
 * **Core:**
   * Apply rails app:update & db:migrate
 
+* **Docker Environment:**
+  * Rename docker-compose.yml to compose.yml
+  * Add health checks to postgres and redis tasks
+  * Add extra environment variables
+  * Add compose.override.yml.example
+
 ## Running this app
 
 You'll need to have [Docker installed](https://docs.docker.com/get-docker/).

@@ -1,0 +1,13 @@
+# note: run `touch .{psql,bash,irb}_history; chmod 600 .{psql,bash,irb}_history` before launch.
+
+services:
+  postgres:
+    volumes:
+      - ./.psql_history:/root/.psql_history
+
+  web:
+    volumes:
+      - ./.bash_history:/home/ruby/.bash_history
+      - ./.irb_history:/home/ruby/.irb_history
+      # - ./.pry_history:/home/ruby/.local/share/pry/pry_history
+      # - ~/.pryrc:/home/ruby/.pryrc:ro
