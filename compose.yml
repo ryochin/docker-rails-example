@@ -130,10 +130,26 @@ services:
   js:
     <<: *default-assets
     command: "yarn build"
+    environment:
+      SELENIUM_DRIVER_URL: "http://browser:4444/wd/hub"
 
   css:
     <<: *default-assets
     command: "yarn build:css"
+
+  browser:
+    image: "seleniarm/standalone-chromium"
+    shm_size: "256m"
+    healthcheck:
+      test: "curl -f localhost:4444/ui"
+      interval: "60s"
+      timeout: "3s"
+      start_period: "5s"
+      retries: 3
+    # ports:
+    #   - "4444:4444"
+    volumes:
+      - "./tmp/downloads:/app/tmp/downloads"
 
 volumes:
   postgres: {}

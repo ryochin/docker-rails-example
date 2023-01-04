@@ -92,6 +92,7 @@ Main changes vs the original repository
 
 * **Core:**
   * Apply rails app:update & db:migrate
+  * Switch to Rspec with integration (browser) test enabled
 * **Docker Environment:**
   * Rename docker-compose.yml to compose.yml
   * Add health checks to postgres and redis tasks
