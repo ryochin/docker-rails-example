@@ -14,10 +14,7 @@ practices](https://nickjanetakis.com/blog/best-practices-around-production-ready
 based on building and deploying dozens of assorted Dockerized web apps since
 late 2014.
 
-**This app is using Rails 7.0.4 and Ruby 3.2.0**. The screenshot doesn't get
-updated every time I bump the versions:
-
-[![Screenshot](.github/docs/screenshot.jpg)](https://github.com/nickjj/docker-rails-example/blob/main/.github/docs/screenshot.jpg?raw=true)
+**This app is using Rails 7.0.4 and Ruby 3.2.0**.
 
 ## Table of contents
 
@@ -53,7 +50,7 @@ out for something else on your own.
 - [esbuild](https://esbuild.github.io/)
 - [Hotwire Turbo](https://hotwired.dev/)
 - [StimulusJS](https://stimulus.hotwired.dev/)
-- [TailwindCSS](https://tailwindcss.com/)
+- [PostCSS](https://postcss.org/)
 - [Heroicons](https://heroicons.com/)
 
 ## Main changes vs a newly generated Rails app
@@ -80,8 +77,7 @@ Dockerize an existing Rails app.
     - `config/routes.rb` has Sidekiq's dashboard ready to be used but commented out for safety
     - `Procifile.dev` has been removed since Docker Compose handles this for us
 - **Assets**:
-    - Use esbuild (`-j esbuild`) and TailwindCSS (`-c tailwind`)
-    - Add `postcss-import` support for `tailwindcss` by using the `--postcss` flag
+    - Use esbuild (`-j esbuild`) and PostCSS (`-c postcss`)
     - Add ActiveStorage JavaScript package
 - **Public:**
     - Custom `502.html` and `maintenance.html` pages
@@ -96,12 +92,14 @@ Main changes vs the original repository
 
 * **Core:**
   * Apply rails app:update & db:migrate
-
 * **Docker Environment:**
   * Rename docker-compose.yml to compose.yml
   * Add health checks to postgres and redis tasks
   * Add extra environment variables
   * Add compose.override.yml.example
+* **Assets**:
+  * Switch Sprockets to Propshaft (`-a propshaft`)
+  * Switch TailwindCSS to PostCSS (`-c postcss`)
 
 ## Running this app
 
