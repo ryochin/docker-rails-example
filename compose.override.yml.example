@@ -9,5 +9,6 @@ services:
     volumes:
       - ./.bash_history:/home/ruby/.bash_history
       - ./.irb_history:/home/ruby/.irb_history
+      - ~/.irbrc:/home/ruby/.irbrc:ro
       # - ./.pry_history:/home/ruby/.local/share/pry/pry_history
       # - ~/.pryrc:/home/ruby/.pryrc:ro

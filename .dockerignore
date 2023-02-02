@@ -16,7 +16,6 @@ tmp/*
 .env*
 !.env.example
 config/master.key
-compose.override.yml
 yarn-error.log
 yarn-debug.log*
 .yarn-integrity
@@ -25,3 +24,9 @@ yarn-debug.log*
 .irb_history
 .pry_history
 .psql_history
+
+CHANGELOG.md
+Dockerfile
+LICENSE
+README.md
+compose.*

@@ -146,6 +146,8 @@ services:
   browser:
     image: "seleniarm/standalone-chromium"
     shm_size: "256m"
+    environment:
+      TZ: "Asia/Tokyo"
     healthcheck:
       test: "curl -f localhost:4444/ui"
       interval: "60s"
