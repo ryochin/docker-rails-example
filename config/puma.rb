@@ -1,6 +1,12 @@
+require 'fileutils'
+
 # Specify the bind host and environment.
 bind "tcp://0.0.0.0:#{ENV.fetch("PORT") { "8000" }}"
 environment ENV.fetch("RAILS_ENV") { "production" }
+
+app_root = File.expand_path('..', __dir__)
+FileUtils.mkdir_p "#{app_root}/tmp/sockets"
+bind "unix://#{app_root}/tmp/sockets/puma.sock"
 
 # Puma can serve each request in a thread from an internal thread pool.
 # The `threads` method setting takes two numbers: a minimum and maximum.

@@ -76,4 +76,7 @@ ENTRYPOINT ["/app/bin/docker-entrypoint-web"]
 
 EXPOSE 8000
 
+VOLUME /app/public
+VOLUME /app/tmp
+
 CMD ["rails", "s"]
